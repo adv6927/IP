@@ -1,0 +1,23 @@
+COOL CHARITY - PROGRAM DESCRIPTION
+
+OVERVIEW
+Cool Charity is a browser-based showcase for a fictional online charity and campaign donation experience. Its presentation is deliberately playful and glamorous, using a dark emerald and charcoal theme, gold accents, serif display typography, animated counters, floating decorative effects, and confetti. The project demonstrates a possible donor-facing interface; it is not a production donation platform.
+
+PAGES AND USER FLOW
+1. Home page (/)
+   The landing page introduces Cool Charity, presents fictional fundraising totals, shows a scrolling donor activity strip, and lists four example campaigns: clean water, rural education, food security, and animal welfare. Calls to action take the visitor to the sign-in page or down to the campaign list.
+
+2. Sign-in page (/login)
+   The sign-in and registration modes collect a name (in registration mode), email, and password. The form accepts arbitrary values and does not validate credentials against a service. It saves a demo user profile in the browser's localStorage, displays a welcome/confetti state, and navigates to the dashboard. The password is not used for authentication or stored.
+
+3. Donor dashboard (/dashboard)
+   A demo session check redirects visitors without a saved local user to /login. The dashboard greets the saved user and displays hard-coded sample totals, four campaigns, and a sample donor leaderboard. Selecting a campaign opens a donation dialog with preset and custom amounts. Confirming a donation updates a temporary impact counter and shows a success/confetti state. Signing out clears the local demo profile and returns to the home page.
+
+TECHNOLOGY
+The application is built with React 19 and TypeScript, using TanStack Start and TanStack Router for the server-capable app framework and file-based routes. Vite provides the development/build tooling. Styling uses Tailwind CSS 4 with a custom CSS token/theme layer. Radix UI primitives support accessible interface elements, lucide-react supplies icons, and Sonner displays toast notifications. Vitest and Testing Library are included for tests; the existing routing test checks that the home route matches.
+
+DATA AND IMPORTANT LIMITATIONS
+Campaign descriptions, fundraising totals, donor activity, and leaderboard entries are static sample data in the client code. The login is a demonstration only and is not secure authentication. The user profile is stored locally in the browser. Donation amounts are not charged, sent to a charity, saved to a server, or added to the campaign totals; the donation confirmation and impact count are only interface behavior. There is no connected payment processor, backend API, application database, or verified charity information in the current project. The displayed impact and fundraising figures should not be presented as real-world results.
+
+RUNNING LOCALLY
+Install the dependencies with the package manager used by the project, then run `npm run dev` (or the equivalent script with Bun). Vite prints a local development URL in the terminal. `npm run build` creates a production build, `npm test` runs the test suite, and `npm run lint` runs ESLint.
